@@ -1,0 +1,55 @@
+{
+  "name": "bravia2mqtt",
+  "version": "1.0.0",
+  "description": "Control your Sony Bravia TV with MQTT.",
+  "bin": {
+    "bravia2mqtt": "dist/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src -d dist -D",
+    "clean": "rm -rf dist/",
+    "prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/forty2/bravia2mqtt.git"
+  },
+  "author": "Zach Bean <zb@forty2.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/forty2/bravia2mqtt/issues"
+  },
+  "homepage": "https://github.com/forty2/bravia2mqtt#readme",
+  "dependencies": {
+    "bravia-simple-ip-control": "^1.0.0",
+    "mqtt": "^2.7.1",
+    "rxjs": "^5.3.0",
+    "yalm": "^4.0.2",
+    "yargs": "^8.0.1"
+  },
+  "devDependencies": {
+    "babel-plugin-syntax-function-bind": "^6.13.0",
+    "babel-plugin-transform-function-bind": "^6.8.0",
+    "babel-plugin-transform-object-rest-spread": "^6.8.0",
+    "babel-preset-env": "^1.4.0"
+  },
+  "babel": {
+    "sourceMaps": "inline",
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ]
+    ],
+    "plugins": [
+      "syntax-function-bind",
+      "transform-function-bind",
+      "transform-object-rest-spread"
+    ]
+  }
+}
