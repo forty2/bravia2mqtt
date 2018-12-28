@@ -36,6 +36,9 @@ function setupNewDevice(device) {
             }
         });
     }
+    else {
+	client = clients[device.id];
+    }
 
     client.publish(getTopic(device, 'connected'), '2', STATUS_OPTS);
 
