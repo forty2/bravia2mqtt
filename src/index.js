@@ -26,9 +26,9 @@ function getTopic(dev, suffix) {
 
 function setupNewDevice(device) {
     log.debug(`Creating client for ${device.id}`);
-    let client;
-    if (!clients[device.id]) {
-        clients[device.id] = client = MQTT.connect(config.broker, {
+    let client = clients[device.id];
+    if (!client) {
+        client = clients[device.id] = MQTT.connect(config.broker, {
             will: {
                 topic:   getTopic(device, 'connected'),
                 payload: '0',
